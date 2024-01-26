@@ -1,0 +1,106 @@
+Bug Report
+Student Name: Yongteng Li
+Student ID: B00940715
+==========
+
+Error 1:
+  Class: MarkovChain
+  Method: isValidTransitionMatrix
+  Test Method: IsValidTransitionMatrix_rectCorrectSum()
+  Message: expected: <false> but was: <true>
+  Bug Line#: 168
+  Bug Description: int C = M.rows() should get column number, but it gets row number
+  Fix Description: int C = M.rows() changed to int C = M.columns()
+
+Error 2:
+  Class: MarkovChain
+  Method: setState()
+  Test Method: setState_edge2()
+  Message: expected: <false> but was: <true>
+  Bug Line#: 120
+  Bug Description: If state greater than or equal to the number of states should return false
+  Fix Description: state > numStates changed to state >= numStates
+
+Error 3:
+  Class: FloatMatrix
+  Method: multiply()
+  Test Method: multiply_null()
+  Message: Cannot invoke "FloatMatrix.rows()" because "other" is null
+  Bug Line#: 182
+  Bug Description: it's calling other.rows() before checking if 'other' is null
+  Fix Description: added a line to check if(other == null) before calling other.rows()
+
+Error 4:
+  Class: FloatMatrix
+  Method: multiply()
+  Test Method: multiply_self()
+  Message: expected: <true> but was: <false>
+  Bug Line#: 197
+  Bug Description: product.get(i, i) is not getting the right index
+  Fix Description: change product.get(i, i) into product.get(i, j)
+
+Error 5:
+  Class: FloatMatrix
+  Method: zero()
+  Test Method: zero_fromRectangle()
+  Message: indexOutOfBoundsException
+  Bug Line#: 129
+  Bug Description: inner loop should use columns not rows
+  Fix Description: change j < M to j < N
+
+Error 6:
+  Class: Coordinate
+  Method: sub()
+  Test Method: sub_case1()
+  Message: Expected :9
+           Actual   :-9
+  Bug Line#: 48
+  Bug Description: the minuend and subtrahend are messed up
+  Fix Description: change Coordinate(other.x - this.x, other.y - this.y) to Coordinate(this.x - other.x, this.y - other.y)
+
+Error 7:
+  Class: RandomWalker
+  Method: walk()
+  Test Method: walk_testCommon()
+  Message: Expected :10
+           Actual   :11
+  Bug Line#: 52
+  Bug Description: the path should record the start point as the first element
+  Fix Description: added a line path.add(curPos);
+
+Error 8:
+  Class: RandomWalker
+  Method: walk()
+  Test Method: walk_testZeroSteps()
+  Message: Expected :1
+           Actual   :0
+  Bug Line#: 51
+  Bug Description: should check if N is zero or negative before operation
+  Fix Description: added a line if(N <= 0) return path
+
+Error 9:
+  Class: RandomWalker
+  Method: walk()
+  Test Method: input: example1
+  Bug Line#: 49-56
+  Bug Description: path is always adding the same reference to one coordinate
+  Fix Description: put instantiation of curPos inside the loop, and update START_X, START_Y
+
+Error 10:
+  Class: FloatMatrix
+  Method: fromFile()
+  Test Method: input: example1
+  Bug Line#: 288
+  Bug Description: the first line read from the file is discarded
+  Fix Description: put the reading of first line inside the loop
+
+Error 11:
+  Class: RandomWalker
+  Method: getStepDirection()
+  Test Method: input: example1
+  Bug Line#: 96-102
+  Bug Description: the move of direction is wrong, it should have negative x on W, and negative y on S
+  Fix Description: update N corresponds to (0, STEP_SIZE);
+                   update E corresponds to (STEP_SIZE, 0);
+                   update S corresponds to (0, -STEP_SIZE);
+                   update W(which is else in the method) corresponds to (-STEP_SIZE, 0);

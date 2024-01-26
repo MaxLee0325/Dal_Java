@@ -1,0 +1,32 @@
+Bug Report
+==========
+
+For each bug, please provide the following information:
+  - Method name
+  - Test method name
+  - Message produced by the test method
+  - Suggest a way that the bug revealed by the test can be fixed.
+  - Any additional comments or analysis that the test revealed.
+
+Example:
+Error 0:
+  Method: add()
+  Test Method: test add()
+  Message: add() did not return null when a matrix adds a null matrix
+  Suggestion: change the return value to null in the validation process
+  Comments: this is a careless mistake on return value
+
+Error 1:
+  Method: multiplyWithScalar()
+  Test Method: test multiplyWithScalar()
+  Message: multiplyWithScalar() did not return the correct values after the calculation
+  Suggestion: check the logic in the calculation process carefully
+  Comments: there is something wrong in the addition process
+
+Error 2:
+  Method: multiplyWithMatrix() 
+  Test Method: test multiplyWithMatrix() 
+  Message: multiplyWithMatrix() did not return the correct values after the calculation
+  Suggestion: check the logic in the calculation process carefully
+  Comments: this is a very strange case, when I print out the value I got from the program, it seemed to match the expected output, but the unit test failed and reported a mismatch, my assumption is the way java deals with doubles, this might be a case like "3.0 not equal to 3.0" in java, if that's the case it could be resolved by using a epsilon value.
+

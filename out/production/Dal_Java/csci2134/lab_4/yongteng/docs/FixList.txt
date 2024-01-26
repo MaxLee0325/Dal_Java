@@ -1,0 +1,86 @@
+Fix List
+==========
+
+Student1BannerID: B00940715
+Student1Name: Yongteng Li
+Student1CSID: yongteng
+
+Student2BannerID: B00928317
+Student2Name: Osebhulimen Egbor
+Student2CSID: egbor
+
+Defect 0:
+  Location: line 99 unnecessary semicolon
+  Fix: deleted
+  Time: 1 minute
+
+Defect 1:
+  Location: line 272 method getWidth() returning height, it should return width
+  Fix: changed return height into return width
+  Time: 1 minute
+
+Defect 2:
+  Location: line 246 getElem() method, the index used in the array should be subtracted by 1 from the input
+  Fix: change matrix[i][j] into matrix[i-1][j-1]
+  Time: 15 minutes
+
+ Defect 3:
+   Location: line 94 and 95 in equals() method, the index is out of bounds in the loop for the 2d array
+   Fix: change i <= height into i < height; j <= width into j < width
+   Time: 3 minute
+
+ Defect 4:
+   Location: line 116 in negate() method, the destination and source element do not match
+   Fix: changed -matrix[j][i] into -matrix[i][j]
+   Time: 1 minute
+
+ Defect 5:
+   Location: line 165 in multiplyWithScalar() method, the index used in the nexted loop is wrong
+   Fix: changed i < width into j < width
+   Time: 2 minute
+
+ Defect 6:
+   Location: line 258 in setElem() method, the index used in the 2d array should be subtracted by 1 from the input
+   Fix: change matrix[i][j] into matrix[i-1][j-1]
+   Time: 2 minutes
+
+ Defect 7:
+   Location: line 6 in class header there is an empty line
+   Fix: removed
+   Time: 1 minute
+
+ Defect 8:
+   Location: line 29 in instance variables should be final for security
+   Fix: changed data type to private final
+   Time: 1 minute
+
+ Defect 9:
+   Location: line 57 in the constructor manual array copy is less efficient
+   Fix: replaced with System.arraycopy
+   Time: 1 minute
+
+ Defect 10:
+   Location: line 227 in the write() method using += with strings in a loop less efficient
+   Fix: replaced with string builder append
+   Time: 1 minute
+
+
+*********** ADD AS MANY MORE AS NEEDED *******************
+
+ANALYSIS:
+
+1. Compute how long it took you to complete all the bug fixes and the average time per bug fix.
+
+Total time: 50 minutes
+Number of bugs: 11
+Average time per bug fix: 4.5 minutes
+
+2. What was the hardest bug you fixed and what made it hard to fix?
+    Defect 2 in the getElem() method, first we thought there is something wrong with the input, but I realized that I did
+not read the method description carefully, so we read it again then we found out the input index is not the actual index
+we should use in side the 2d array, which input index begins at 1 while in the array it starts at 0. So the index in the
+array should be subtracted by 1 from the input index. My careless and the changed of mindset caused this delay in fix.
+
+3. How consistent was your time to fix each bug? What factors may have affected that consistency?
+    Pretty consistent, we find errors fast and fix them fast. But sometimes I am careless and didn't notice what's
+described in the method introduction, then it would take me a long time to figure out why the error happened.

@@ -1,0 +1,33 @@
+List of Refactorings
+====================
+
+Name/Banner# of Developer : Yongteng Li, B00940715
+
+Refactorings:
+=============
+
+1. File: AngryBot.java
+   Location (method/approx. line #): getNextMove(), line 52
+   Issue Identified: Magic number
+   Description of fix: Replaced with a constant energyThreshold
+
+2. File: AngryBot.java
+   Location (method/approx. line #): getNextMove()， line 55
+   Issue Identified: Deep nested routine
+   Description of fix: Created a method "updateScore()" and replaced it with calling the method
+
+3. File: AngryBot.java
+   Location (method/approx. line #): getNextMove()， line 58
+   Issue Identified: Unnecessary +1 operation on the min value
+   Description of fix: Removed + 1 from "int min = scores[District.CURRENT] + 1"
+
+4. File: AngryBot.java
+    Location (method/approx. line #): getNextMove()， line 58 - 64
+    Issue Identified: Same operation appears in different subclasses of SpressoBot
+    Description of fix: Created a method "findMinScore()" in the parent class and just call that method
+
+
+
+
+
+

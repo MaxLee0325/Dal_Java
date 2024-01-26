@@ -1,0 +1,140 @@
+CSCI 2134 Final Exam, Fall 2023
+===============================
+
+Full name: Yongteng Li
+Banner ID: B00940715
+
+==============
+| Question 1 |
+==============
+
+Add your name and Banner ID in the space provided above.
+
+
+==============
+| Question 2 |
+==============
+
+Defect 1.
+  Location: Workshop.java line 41
+  Description: MakerElf should have the number of makers
+  Fix: change numBuilders in the loop condition with numMakers
+
+Defect 2.
+  Location: Workshop.java line 41
+  Description: BuilderElf should have the number of builders
+  Fix: change numMakers in the loop condition with numBuilders
+
+Defect 3.
+  Location: Workshop.java line 94
+  Description: Every time a toy is made, the material is not reduced
+  Fix: change peek() into remove() to actually remove the material
+
+Defect 4.
+  Location: BuilderElf.java line 14
+  Description: The energy is supposed to be 2
+  Fix: change 3 into 2
+
+Defect 5.
+  Location: BuilderElf.java line 39
+  Description: The energy should be added to all the elves
+  Fix: delete the if statement
+
+Defect 6.
+  Location: MakerElf.java line 38
+  Description: The energy should be added to all the elves
+  Fix: delete the if statement
+
+Defect 7.
+  Location: BuilderElfTest
+  Description: There is no unit test to test the elf with positive energy
+  Fix: add a new unit test cookieBreakWithEnergy() to test the energy addition
+
+Defect 8.
+  Location: CookieElfTest
+  Description: There is no unit test to test the elf with positive energy
+  Fix: add a new unit test cookieBreakWithEnergy() to test the energy addition
+
+
+==============
+| Question 3 |
+==============
+
+Assertion 1.
+  Location: Workshop.java line 40
+  Description: Assert the input numbers should be positive
+
+Exception 1.
+  Location: BuilderElf.java line 76
+  Exception thrown: InputMismatchException("The energy is invalid!!")
+  Throw conditions: When the energy level is less than 1
+
+Exception 2.
+  Location: MakerElf.java line 48
+  Exception thrown: InputMismatchException("Invalid energy!!")
+  Throw conditions: When the energy level is less than 1
+
+Exception 3.
+  Location: MakerElf.java line 64
+  Exception thrown: InputMismatchException("Invalid energy level!")
+  Throw conditions: When the energy level is less than 2
+
+Exception 4.
+  Location: MakerElf.java line 26
+  Exception thrown: InputMismatchException("Energy can't be negative!")
+  Throw conditions: When the input energy level is negative
+
+
+==============
+| Question 4 |
+==============
+
+Refactoring 1.
+  Location: Workshop.java line 66
+  Code smell: bad variable name b (data level)
+  Proposed fix: change the name to meaningful: "needRest"
+
+Refactoring 2.
+  Location: Workshop.java line 67, 71
+  Code smell: inefficient for loop to iterate through (statement level)
+  Proposed fix: change indexed for loop to enhanced for loop
+
+Refactoring 3.
+  Location: Workshop.java line 66-78
+  Code smell: finding out if needed rest could be extracted into a method (routine level)
+  Proposed fix: extracted into a new method checkRest()
+
+
+==============
+| Question 5 |
+==============
+
+Class Refactoring 1.
+  Class(es) involved: Workshop.java
+  Location: line 26-30
+  Issue identified: Encapsulate exposed member variables
+  SOLID violation: Dependency Inversion Principle
+  Proposed fix: change public into private
+
+Class Refactoring 2.
+  Class(es) involved: BuilderElf.java and MakerElf.java
+  Location: N/A
+  Issue identified: classes with similar behaviors can extend a superclass
+  SOLID violation: Open/close principle
+  Proposed fix: create a super class Elf
+
+Class Refactoring 3.
+  Class(es) involved: Workshop.java
+  Location: line 131
+  Issue identified: helper method only accessed in this class
+  SOLID violation: Dependency Inversion Principle
+  Proposed fix: change public into private
+
+Class Refactoring 4.
+  Class(es) involved: BuilderElf.java, MakerElf.java, Elf.java
+  Location: method getEnergy()
+  Issue identified: same action can be moved up to super class
+  SOLID violation: Single Responsibility Principle
+  Proposed fix: extract the method getEnergy() and move to superclass
+
+

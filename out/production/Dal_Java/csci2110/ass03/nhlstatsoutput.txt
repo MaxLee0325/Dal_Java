@@ -1,0 +1,18 @@
+Players with highest points and their teams:
+Player name: St.Louis, team name: TB.
+
+Most aggressive players, their teams and their positions:
+Player name: Clowe, team name: NYR, position: RW.
+Player name: Ott, team name: BUF, position: C.
+
+Most valuable players and their teams:
+Player name: Carter, team name: LA.
+
+Most promising players and their teams:
+Player name: Ovechkin, team name: WSH.
+
+Teams that had the most number of penalty minutes:
+Team: BOS.
+
+Teams that had the most number of game winning goals:
+Team: PIT.

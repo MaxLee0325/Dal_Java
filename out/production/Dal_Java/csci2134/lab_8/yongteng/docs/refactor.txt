@@ -1,0 +1,42 @@
+List of Refactorings
+====================
+
+Name/Banner# of Developer 1: Yongteng Li / B00940715
+
+Refactorings:
+=============
+
+1. File: SpressoBot.java, ChickenBot.java, TimBot.java
+   Location (method/approx. line #): getNextMove(), line 41
+   Issue Identified: Similar code to check if move will result in
+                     energy use and decrement energyLevel if that
+                     is the case, but the scale to the score is different
+   Description of fix:  Push the common method into TimBot.java, creating a
+                        public method to be used instead, the scale to
+                        the score is different, so I added an instance
+                        variable scale, and it has different data initialization
+                        in Spresso and ChickenBot.
+   Implemented: Yes (Completely, all tests pass)
+
+2. File: TimBot.java
+   Location (method/approx. line #): 15
+   Issue Identified: Parent class TimBot.java does not implement an interface
+   Description of fix: Added an interface called Movable that has an abstract
+                       method getNextMove to define the behaviors in the parent
+                       class.
+   Implemented: Yes (Completely, all tests pass)
+
+3. File: BullyBot.java
+   Location (method/approx. line #): 15
+   Issue Identified: Subclass too similar with its super class
+   Description of fix: Removed extra inheritance, only extend TimBot instead of ChickenBot
+   Implemented: Yes (Completely, all tests pass)
+
+4. File: AngryBot.java, TimBot.java
+   Location (method/approx. line #): AngryBot 59, TimBot 136, 91
+   Issue Identified: Common code inside a function can be extracted outside into a helper
+                     method.
+   Description of fix: Extracted in the super class TimBot as a method finMin()
+   Implemented: Yes (Completely, all tests pass)
+
+

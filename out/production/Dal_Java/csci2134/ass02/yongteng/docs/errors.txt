@@ -1,0 +1,37 @@
+Bug Report
+==========
+
+Error 0:
+  Class: Coordinate
+  Method: sub()
+  Test Method: sub()
+  Message: Subtraction operation wrong
+  Comments: There is problem in the subtraction operation
+
+Error 1:
+  Class: FloatMatrix
+  Method: zero()
+  Test Method: zero()
+  Message: IndexOutOfBoundsException
+  Comments: Method didn't handle the bounds of index properly
+
+Error 2:
+  Class: FloatMatrix
+  Method: multiply()
+  Test Method: multiply_match()
+  Message: Method did not operate matrix multiplication properly
+  Comments: There is problem in the process of matrix multiplication operation
+
+ Error 3:
+   Class: MarkovChain
+   Method: setState()
+   Test Method: setState_equal()
+   Message: Method did not return false when the input index is equal to the number of states
+   Comments: Method didn't handle the bounds of index properly
+
+ Error 4:
+   Class: MarkovChain
+   Method: isValidTransitionMatrix()
+   Test Method: isValidTransitionMatrix_dismatch()
+   Message: IndexOutOfBoundsException
+   Comments: Method didn't handle the bounds of index properly

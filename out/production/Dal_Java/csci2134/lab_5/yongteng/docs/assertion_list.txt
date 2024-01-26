@@ -1,0 +1,16 @@
+ASSERTION LIST: Where should assertions be added?
+=================================================
+
+Name/Banner# of Developer : Yongteng Li, B00940715
+
+Assertion 1:
+Method:             Line #      Assertion itself
+getElem()           259         matrix != null
+
+Assertion 2:
+Method:             Line #      Assertion input
+Matrix(Scanner s)   68          s.hasNext();
+
+Assertion 3:
+Method:             Line #      Assertion input
+negate()            113-114     height != 0, width != 0

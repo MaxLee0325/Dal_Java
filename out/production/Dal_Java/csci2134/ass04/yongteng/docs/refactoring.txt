@@ -1,0 +1,36 @@
+Student: Yongteng Li
+ID: B00940715
+Project: csci2134 assignment 4
+
+1. Create a superclass "Walker"
+   It is the parent class of the three children walker classes,
+   it contains common methods and instance variables
+
+2. Create a subclass "SpiralWalker"
+   It is the walker object that walks in a spiral shape, it's
+   path should be determined by the number of steps only
+
+3. Create a subclass "BreadCrumbWalker"
+   It is the walker object that walks forward like a random
+   walker, but additionally it also walks back right after
+
+4. Extract the common instance variables into the superclass
+
+5. Create different constructors in the superclass, for different
+   walkers to invoke.
+
+6. Extract common methods from the subclass to superclass,
+   including: saveWalkToFile(), saveWalkToDat(), getStepDirection(),
+   some all methods are not extracted because they behave differently
+   in that subclass
+
+7. Create a generic method walk() in superclass, it's for generic
+   purpose, will be override by subclasses
+
+8. Specialized helper methods getMap(), getList() should be private and only exist in that
+   SpiralWalker subclass
+
+9. walk() method is specialized in each subclass as they walk differently,
+   so each subclass has their own walk() method
+
+
